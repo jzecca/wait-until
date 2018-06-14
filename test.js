@@ -31,6 +31,18 @@ describe('waitUntil', () => {
 
             await expect(waitUntil(fn, 200)).to.be.rejectedWith(Error);
         });
+
+        it('should reject if function throws', async () => {
+            const fn = () => {
+                if (elapsedTime() > 200) {
+                    throw 'Boom';
+                }
+
+                return false;
+            };
+
+            await expect(waitUntil(fn)).to.be.rejectedWith('Boom');
+        })
     });
 
     describe('Function returning a Promise', () => {
@@ -52,6 +64,16 @@ describe('waitUntil', () => {
             });
 
             await expect(waitUntil(fn, 200)).to.be.rejectedWith(Error);
+        });
+
+        it('should reject if Promise rejects', async () => {
+            const fn = () => new Promise((resolve, reject) => {
+                return (elapsedTime() > 200)
+                    ? reject('Boom')
+                    : resolve(false);
+            });
+
+            await expect(waitUntil(fn)).to.be.rejectedWith('Boom');
         });
     });
 });

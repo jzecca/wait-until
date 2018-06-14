@@ -1,6 +1,7 @@
 # waitUntil
 
 [![Build Status](https://travis-ci.com/zed-k/wait-until.svg?branch=master)](https://travis-ci.com/zed-k/wait-until)
+[![Coverage Status](https://coveralls.io/repos/github/zed-k/wait-until/badge.svg?branch=master)](https://coveralls.io/github/zed-k/wait-until?branch=master)
 
 Waits for a function result to be truthy.<br>
 Keeps trying until it happens or timeout is reached.

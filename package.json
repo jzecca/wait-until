@@ -17,11 +17,14 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha --slow 500"
+    "test": "nyc mocha --slow 500",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^5.2.0"
+    "coveralls": "^3.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
   }
 }

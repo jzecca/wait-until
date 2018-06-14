@@ -1,0 +1,27 @@
+{
+  "name": "node-wait-until",
+  "version": "1.0.0",
+  "description": "Waits for a function result to be truthy",
+  "author": "Zed-K",
+  "license": "MIT",
+  "repository": "github:zed-k/wait-until",
+  "keywords": [
+    "wait",
+    "until",
+    "promise"
+  ],
+  "engines": {
+    "node": ">=7"
+  },
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "mocha --slow 500"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0"
+  }
+}

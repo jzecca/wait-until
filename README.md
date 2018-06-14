@@ -5,7 +5,7 @@
 Waits for a function result to be truthy.<br>
 Keeps trying until it happens or timeout is reached.
 
-Similar to [async-wait-until](https://www.npmjs.com/package/async-wait-until) but supporting functions that returns a `Promise`.
+Similar to [async-wait-until](https://www.npmjs.com/package/async-wait-until) but with support for functions that returns a `Promise`.
 
 ## Installation
 
@@ -33,24 +33,13 @@ waitUntil(enoughTimeHasPassed, 600)
     .catch(error => console.log(`Operation failed with error: ${error}`));
 ```
 
-...or within an `async` function:
-
-```js
-try {
-    const result = await waitUntil(enoughTimeHasPassed, 600);
-    console.log(`Operation succeeded with result: ${result}`);
-} catch (error) {
-    console.log(`Operation failed with error: ${error}`);
-}
-```
-
 ## API
 
 ### waitUntil(function, [timeout], [delay])
 
 Returns a `Promise` that resolves when function returns a truthy result.
 
-Rejects if function throws or returns a `Promise` that rejects, or if `timeout` is reached.
+Rejects if function throws or returns a `Promise` that rejects, or if timeout is reached.
 
 #### function
 
